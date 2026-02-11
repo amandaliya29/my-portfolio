@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #C778DD;
+  --color-gray: #ABB2BF;
+  --color-background: #282C33;
+  --font-mono: 'Fira Code', monospace;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-mono);
+  @apply bg-white text-black dark:bg-[#282C33] dark:text-white transition-colors duration-300;
+}
