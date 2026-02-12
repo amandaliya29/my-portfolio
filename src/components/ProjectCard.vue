@@ -10,7 +10,16 @@ defineProps({
 <template>
   <div class="border border-gray-600 flex flex-col bg-white dark:bg-transparent transition-all hover:-translate-y-2 hover:shadow-xl hover:shadow-[#C778DD]/20 duration-300 glow-on-hover">
     <div class="h-48 border-b border-gray-600 overflow-hidden relative group shrink-0">
-         <img :src="project.img" :alt="project.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+         <img 
+           :src="project.img" 
+           :alt="project.title" 
+           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+           width="850"
+           height="510"
+           loading="lazy"
+           decoding="async"
+         >
+
          <router-link :to="{ name: 'project-detail', params: { id: project.id }}" class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <span class="text-white border border-white px-4 py-2 text-sm">View Details</span>
          </router-link>

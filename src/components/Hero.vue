@@ -4,7 +4,7 @@
 <template>
   <section id="home" class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 py-20 md:py-0">
     <!-- Text Content -->
-    <div class="flex-1 space-y-5 md:space-y-8 text-center md:text-left reveal">
+    <div class="flex-1 space-y-5 md:space-y-8 text-center md:text-left">
       <h1 class="text-3xl md:text-5xl font-bold leading-tight">
         Ashish Mandaliya is a <span class="text-[#C778DD]">React Native</span> and <span class="text-[#C778DD]">Mobile Application Developer</span>
       </h1>
@@ -19,10 +19,20 @@
     </div>
 
     <!-- Image / Graphic -->
-    <div class="flex-1 relative flex justify-center w-full max-w-sm md:max-w-none reveal delay-300">
+    <div class="flex-1 relative flex justify-center w-full max-w-sm md:max-w-none">
       <!-- Decorative Logo/Elements -->
       <div class="relative z-10 w-64 h-64 md:w-80 md:h-80 bg-gray-200 dark:bg-gray-700/50 rounded-full overflow-hidden flex items-center justify-center border-4 border-gray-100 dark:border-gray-800 animate-float">
-         <img src="@/assets/images/image.png" alt="Ashish Mandaliya" class="w-full h-full object-cover" />
+          <img 
+            src="@/assets/images/image.png" 
+            alt="Ashish Mandaliya" 
+            class="w-full h-full object-cover"
+            width="320"
+            height="320"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+          />
+
       </div>
 
       <!-- Background decorative elements -->

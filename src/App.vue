@@ -32,25 +32,54 @@ const initReveal = () => {
 
 onMounted(() => {
   initReveal()
-  window.addEventListener('scroll', updateScrollProgress)
+  window.addEventListener('scroll', updateScrollProgress, { passive: true })
 
-  // Initialize Crisp
+  // Initialize Crisp on interaction (improves bfcache and TBT)
   const crispWebsiteId = import.meta.env.VITE_CRISP_WEBSITE_ID
   if (crispWebsiteId && crispWebsiteId !== 'your-crisp-website-id-here') {
-    window.$crisp = []
-    window.CRISP_WEBSITE_ID = crispWebsiteId
-    ;(function () {
+    const initCrisp = () => {
+      if (window.$crisp) return
+      
+      window.$crisp = []
+      window.CRISP_WEBSITE_ID = crispWebsiteId
       const d = document
       const s = d.createElement('script')
       s.src = 'https://client.crisp.chat/l.js'
       s.async = 1
       d.getElementsByTagName('head')[0].appendChild(s)
-    })()
+
+      cleanupCrispListeners()
+    }
+
+    const cleanupCrispListeners = () => {
+      window.removeEventListener('scroll', initCrisp)
+      window.removeEventListener('click', initCrisp)
+      window.removeEventListener('touchstart', initCrisp)
+    }
+
+    // Attach for later cleanup
+    window._cleanupCrisp = cleanupCrispListeners
+
+    window.addEventListener('scroll', initCrisp, { passive: true })
+    window.addEventListener('click', initCrisp, { passive: true })
+    window.addEventListener('touchstart', initCrisp, { passive: true })
   }
+
+  // bfcache monitoring
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      console.log('Page restored from bfcache')
+      initReveal() // Re-run reveal animations on restoration
+    }
+  })
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', updateScrollProgress)
+  window.removeEventListener('scroll', updateScrollProgress, { passive: true })
+  if (window._cleanupCrisp) {
+    window._cleanupCrisp()
+    delete window._cleanupCrisp
+  }
 })
 </script>
 
@@ -59,7 +88,7 @@ onUnmounted(() => {
     <div id="scroll-progress"></div>
     <SocialSidebar />
     <Navbar />
-    <main class="max-w-screen-xl mx-auto px-4 pt-28 pb-12 flex-grow w-full">
+    <main class="max-w-screen-xl mx-auto px-4 pt-28 pb-12 flex-grow w-full min-h-screen">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in" @after-enter="initReveal">
           <component :is="Component" />

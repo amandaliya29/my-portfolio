@@ -23,7 +23,16 @@
 
       <div class="w-full md:w-1/2 relative flex justify-center">
          <div class="relative w-full max-w-sm">
-            <img src="@/assets/images/image2.jpeg" alt="Ashish Mandaliya" class="w-full border-b-2 border-[#C778DD]" />
+            <img 
+              src="@/assets/images/image2.jpeg" 
+              alt="Ashish Mandaliya" 
+              class="w-full border-b-2 border-[#C778DD]" 
+              width="480"
+              height="480"
+              loading="lazy"
+              decoding="async"
+            />
+
             <!-- Decorations -->
             <div class="absolute -bottom-10 left-0 grid grid-cols-5 gap-2">
                <div v-for="i in 25" :key="i" class="w-1 h-1 bg-[#C778DD] rounded-full"></div>

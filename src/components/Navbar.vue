@@ -36,7 +36,13 @@ const isOpen = ref(false)
       </div>
 
       <!-- Mobile Menu Button -->
-      <button @click="isOpen = !isOpen" class="md:hidden p-2 z-50 focus:outline-none">
+      <button 
+        @click="isOpen = !isOpen" 
+        class="md:hidden p-2 z-50 focus:outline-none"
+        aria-label="Toggle mobile menu"
+        :aria-expanded="isOpen"
+      >
+
         <div class="space-y-1.5">
           <span :class="{'rotate-45 translate-y-2': isOpen}" class="block w-6 h-0.5 bg-black dark:bg-white transition-transform duration-300"></span>
           <span :class="{'opacity-0': isOpen}" class="block w-6 h-0.5 bg-black dark:bg-white transition-opacity duration-300"></span>
