@@ -8,7 +8,7 @@ import Contact from '../components/Contact.vue'
 </script>
 
 <template>
-  <div class="space-y-32">
+  <div class="space-y-12 md:space-y-32">
     <Hero />
     <Quote />
     <Projects />

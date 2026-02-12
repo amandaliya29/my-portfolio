@@ -25,14 +25,14 @@ const isOpen = ref(false)
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8">
-        <a 
+        <router-link 
           v-for="link in links" 
           :key="link.name" 
-          :href="link.href"
+          :to="{ path: '/', hash: link.href }"
           class="text-gray-500 hover:text-black dark:text-[#ABB2BF] dark:hover:text-white transition-colors"
         >
           <span class="text-[#C778DD]">#</span>{{ link.name }}
-        </a>
+        </router-link>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -51,15 +51,15 @@ const isOpen = ref(false)
       class="fixed inset-0 top-0 left-0 w-full h-screen bg-white dark:bg-[#282C33] transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-24 px-8 z-40"
     >
       <div class="flex flex-col gap-8 text-2xl font-medium">
-        <a 
+        <router-link 
           v-for="link in links" 
           :key="link.name" 
-          :href="link.href"
+          :to="{ path: '/', hash: link.href }"
           @click="isOpen = false"
           class="hover:text-[#C778DD] transition-colors"
         >
           <span class="text-[#C778DD]">#</span>{{ link.name }}
-        </a>
+        </router-link>
       </div>
     </div>
   </nav>

@@ -1,6 +1,6 @@
 <template>
-  <section id="skills" class="py-20">
-    <div class="flex items-center justify-between mb-12">
+  <section id="skills" class="py-10 md:py-20 reveal">
+    <div class="flex items-center justify-between mb-8 md:mb-12">
       <h2 class="text-3xl font-medium flex items-center gap-4">
         <span class="text-[#C778DD]">#</span>skills
         <span class="h-px w-64 bg-[#C778DD] hidden md:block"></span>
@@ -20,27 +20,27 @@
       <!-- Skills Grid -->
       <div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         
-        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300">
+        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300 reveal delay-100">
           <h3 class="font-bold border-b border-gray-600 p-2 text-black dark:text-white">Languages</h3>
           <p class="p-2 text-gray-500 dark:text-gray-400">JavaScript Java</p>
         </div>
 
-        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300">
+        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300 reveal delay-200">
           <h3 class="font-bold border-b border-gray-600 p-2 text-black dark:text-white">Databases</h3>
           <p class="p-2 text-gray-500 dark:text-gray-400">SQLite</p>
         </div>
 
-        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300">
+        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300 reveal delay-300">
           <h3 class="font-bold border-b border-gray-600 p-2 text-black dark:text-white">Tools</h3>
-          <p class="p-2 text-gray-500 dark:text-gray-400">VSCode GitHub Postman Git</p>
+          <p class="p-2 text-gray-500 dark:text-gray-400">VSCode Android Studio GitHub Postman Git</p>
         </div>
 
-        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300">
+        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300 reveal delay-400">
           <h3 class="font-bold border-b border-gray-600 p-2 text-black dark:text-white">Other</h3>
           <p class="p-2 text-gray-500 dark:text-gray-400">HTML CSS TailwindCSS Redux</p>
         </div>
 
-        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300">
+        <div class="border border-gray-600 h-fit hover:border-white transition-colors duration-300 reveal delay-500">
           <h3 class="font-bold border-b border-gray-600 p-2 text-black dark:text-white">Frameworks</h3>
           <p class="p-2 text-gray-500 dark:text-gray-400">React Native</p>
         </div>
