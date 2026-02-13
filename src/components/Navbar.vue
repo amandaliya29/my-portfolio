@@ -13,6 +13,7 @@ const links = [
 ]
 
 const isOpen = ref(false)
+import resume from '@/assets/cv/Ashish Resume.pdf'
 </script>
 
 <template>
@@ -33,6 +34,17 @@ const isOpen = ref(false)
         >
           <span class="text-[#C778DD]">#</span>{{ link.name }}
         </router-link>
+        
+        <!-- CV Download Button -->
+        <a 
+          :href="resume" 
+          download="Ashish_Resume.pdf"
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-4 py-1 border border-[#C778DD] text-gray-500 hover:text-black dark:text-[#ABB2BF] dark:hover:text-white hover:bg-[#C778DD]/10 transition-all duration-300"
+        >
+          download cv
+        </a>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -66,6 +78,18 @@ const isOpen = ref(false)
         >
           <span class="text-[#C778DD]">#</span>{{ link.name }}
         </router-link>
+        
+        <!-- CV Download Button Mobile -->
+        <a 
+          :href="resume" 
+          download="Ashish_Resume.pdf"
+          target="_blank" 
+          rel="noopener noreferrer"
+          @click="isOpen = false"
+          class="text-center px-6 py-2 border border-[#C778DD] text-[#ABB2BF] hover:text-white hover:bg-[#C778DD]/10 transition-all duration-300"
+        >
+          download cv
+        </a>
       </div>
     </div>
   </nav>

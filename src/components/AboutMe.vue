@@ -1,5 +1,6 @@
+
 <template>
-  <section id="about" class="py-10 md:py-20 reveal">
+  <section id="about" class="py-10 md:py-20 reveal overflow-hidden">
     <div class="flex items-center justify-between mb-8 md:mb-12 mt-10">
       <h2 class="text-3xl font-medium flex items-center gap-4">
         <span class="text-[#C778DD]">#</span>about-me

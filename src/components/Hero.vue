@@ -1,8 +1,9 @@
+
 <script setup>
 </script>
 
 <template>
-  <section id="home" class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 py-20 md:py-0">
+  <section id="home" class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 py-20 md:py-0 overflow-hidden">
     <!-- Text Content -->
     <div class="flex-1 space-y-5 md:space-y-8 text-center md:text-left">
       <h1 class="text-3xl md:text-5xl font-bold leading-tight">

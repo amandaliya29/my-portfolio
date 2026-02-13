@@ -1,3 +1,4 @@
+
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import Navbar from './components/Navbar.vue'
@@ -84,7 +85,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white text-black dark:bg-[#282C33] dark:text-white transition-colors duration-300 font-mono flex flex-col">
+  <div class="min-h-screen bg-white text-black dark:bg-[#282C33] dark:text-white transition-colors duration-300 font-mono flex flex-col overflow-x-hidden">
     <div id="scroll-progress"></div>
     <SocialSidebar />
     <Navbar />
